@@ -8,7 +8,7 @@ from math import sqrt
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple, Union
 
-import pysimstring.simstring as simstring
+# import pysimstring.simstring as simstring
 from spacy.tokens import Doc, Span
 from spacy.vocab import Vocab
 from tqdm import tqdm
@@ -32,7 +32,7 @@ class SimstringWriter:
 
     def __enter__(self):
         path = os.path.join(self.path, "terms.simstring")
-        self.db = simstring.writer(path, 3, False, True)
+        # self.db = simstring.writer(path, 3, False, True)
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
@@ -162,10 +162,10 @@ class SimstringMatcher:
 
     def load(self):
         if self.ss_reader is None:
-            self.ss_reader = simstring.reader(
-                os.path.join(self.path, "terms.simstring")
-            )
-            self.ss_reader.measure = getattr(simstring, self.measure)
+            # self.ss_reader = simstring.reader(
+            #     os.path.join(self.path, "terms.simstring")
+            # )
+            # self.ss_reader.measure = getattr(simstring, self.measure)
             self.ss_reader.threshold = self.threshold
 
             with open(os.path.join(self.path, "cui-db.pkl"), "rb") as f:
