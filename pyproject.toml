@@ -19,6 +19,7 @@ dependencies = [
     "safetensors==0.4.5",
     "murmurhash==1.0.12",
     "preshed==3.0.2",
+    "thinc==8.2.1",
     "tqdm",
     "umls-downloader>=0.1.1",
     "numpy>=1.15.0,<1.23.2; python_version<'3.8'",
