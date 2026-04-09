@@ -166,7 +166,7 @@ class Transformer(WordEmbeddingComponent[TransformerBatchInput]):
             kwargs["quantization_config"] = quantization
 
         self.transformer = AutoModel.from_pretrained(model, **kwargs)
-        self.tokenizer = AutoTokenizer.from_pretrained(model, use_fast=False)
+        self.tokenizer = AutoTokenizer.from_pretrained(model)
         self.window = window
         self.stride = stride
         self.training_stride = training_stride
